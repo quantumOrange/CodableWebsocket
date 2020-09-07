@@ -32,7 +32,8 @@
 /* Begin PBXFileReference section */
 		5410D2B7250661A90097DE94 /* Thing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thing.swift; sourceTree = "<group>"; };
 		5410D2B9250670A70097DE94 /* Publisher+FilterOutErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+FilterOutErrors.swift"; sourceTree = "<group>"; };
-		54CBB0E225061F7400FD9ED7 /* WebSocketDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebSocketDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		546FAB64250687D700D2A821 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		54CBB0E225061F7400FD9ED7 /* CodableWebSocketExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodableWebSocketExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54CBB0E525061F7400FD9ED7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54CBB0E725061F7400FD9ED7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		54CBB0E925061F7400FD9ED7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,7 +41,7 @@
 		54CBB0EE25061F7600FD9ED7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		54CBB0F125061F7600FD9ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54CBB0F325061F7600FD9ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		54CBB0F825061F7600FD9ED7 /* WebSocketDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebSocketDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		54CBB0F825061F7600FD9ED7 /* CodableWebSocketExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodableWebSocketExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54CBB0FC25061F7600FD9ED7 /* WebSocketDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketDemoTests.swift; sourceTree = "<group>"; };
 		54CBB0FE25061F7600FD9ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54CBB10725061FF400FD9ED7 /* CodableWebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableWebSocket.swift; sourceTree = "<group>"; };
@@ -68,8 +69,9 @@
 			isa = PBXGroup;
 			children = (
 				54CBB10725061FF400FD9ED7 /* CodableWebSocket.swift */,
-				54CBB0E425061F7400FD9ED7 /* WebSocketDemo */,
-				54CBB0FB25061F7600FD9ED7 /* WebSocketDemoTests */,
+				546FAB64250687D700D2A821 /* README.md */,
+				54CBB0E425061F7400FD9ED7 /* CodableWebSocketExample */,
+				54CBB0FB25061F7600FD9ED7 /* CodableWebSocketExampleTests */,
 				54CBB0E325061F7400FD9ED7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,13 +79,13 @@
 		54CBB0E325061F7400FD9ED7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				54CBB0E225061F7400FD9ED7 /* WebSocketDemo.app */,
-				54CBB0F825061F7600FD9ED7 /* WebSocketDemoTests.xctest */,
+				54CBB0E225061F7400FD9ED7 /* CodableWebSocketExample.app */,
+				54CBB0F825061F7600FD9ED7 /* CodableWebSocketExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		54CBB0E425061F7400FD9ED7 /* WebSocketDemo */ = {
+		54CBB0E425061F7400FD9ED7 /* CodableWebSocketExample */ = {
 			isa = PBXGroup;
 			children = (
 				54CBB0E525061F7400FD9ED7 /* AppDelegate.swift */,
@@ -96,7 +98,7 @@
 				54CBB0F325061F7600FD9ED7 /* Info.plist */,
 				54CBB0ED25061F7600FD9ED7 /* Preview Content */,
 			);
-			path = WebSocketDemo;
+			path = CodableWebSocketExample;
 			sourceTree = "<group>";
 		};
 		54CBB0ED25061F7600FD9ED7 /* Preview Content */ = {
@@ -107,21 +109,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		54CBB0FB25061F7600FD9ED7 /* WebSocketDemoTests */ = {
+		54CBB0FB25061F7600FD9ED7 /* CodableWebSocketExampleTests */ = {
 			isa = PBXGroup;
 			children = (
 				54CBB0FC25061F7600FD9ED7 /* WebSocketDemoTests.swift */,
 				54CBB0FE25061F7600FD9ED7 /* Info.plist */,
 			);
-			path = WebSocketDemoTests;
+			path = CodableWebSocketExampleTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		54CBB0E125061F7400FD9ED7 /* WebSocketDemo */ = {
+		54CBB0E125061F7400FD9ED7 /* CodableWebSocketExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 54CBB10125061F7600FD9ED7 /* Build configuration list for PBXNativeTarget "WebSocketDemo" */;
+			buildConfigurationList = 54CBB10125061F7600FD9ED7 /* Build configuration list for PBXNativeTarget "CodableWebSocketExample" */;
 			buildPhases = (
 				54CBB0DE25061F7400FD9ED7 /* Sources */,
 				54CBB0DF25061F7400FD9ED7 /* Frameworks */,
@@ -131,14 +133,14 @@
 			);
 			dependencies = (
 			);
-			name = WebSocketDemo;
+			name = CodableWebSocketExample;
 			productName = WebSocketDemo;
-			productReference = 54CBB0E225061F7400FD9ED7 /* WebSocketDemo.app */;
+			productReference = 54CBB0E225061F7400FD9ED7 /* CodableWebSocketExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		54CBB0F725061F7600FD9ED7 /* WebSocketDemoTests */ = {
+		54CBB0F725061F7600FD9ED7 /* CodableWebSocketExampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 54CBB10425061F7600FD9ED7 /* Build configuration list for PBXNativeTarget "WebSocketDemoTests" */;
+			buildConfigurationList = 54CBB10425061F7600FD9ED7 /* Build configuration list for PBXNativeTarget "CodableWebSocketExampleTests" */;
 			buildPhases = (
 				54CBB0F425061F7600FD9ED7 /* Sources */,
 				54CBB0F525061F7600FD9ED7 /* Frameworks */,
@@ -149,9 +151,9 @@
 			dependencies = (
 				54CBB0FA25061F7600FD9ED7 /* PBXTargetDependency */,
 			);
-			name = WebSocketDemoTests;
+			name = CodableWebSocketExampleTests;
 			productName = WebSocketDemoTests;
-			productReference = 54CBB0F825061F7600FD9ED7 /* WebSocketDemoTests.xctest */;
+			productReference = 54CBB0F825061F7600FD9ED7 /* CodableWebSocketExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -186,8 +188,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				54CBB0E125061F7400FD9ED7 /* WebSocketDemo */,
-				54CBB0F725061F7600FD9ED7 /* WebSocketDemoTests */,
+				54CBB0E125061F7400FD9ED7 /* CodableWebSocketExample */,
+				54CBB0F725061F7600FD9ED7 /* CodableWebSocketExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -239,7 +241,7 @@
 /* Begin PBXTargetDependency section */
 		54CBB0FA25061F7600FD9ED7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 54CBB0E125061F7400FD9ED7 /* WebSocketDemo */;
+			target = 54CBB0E125061F7400FD9ED7 /* CodableWebSocketExample */;
 			targetProxy = 54CBB0F925061F7600FD9ED7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -375,10 +377,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"WebSocketDemo/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CodableWebSocketExample/Preview Content\"";
 				DEVELOPMENT_TEAM = 84Y3R5UC5Q;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = WebSocketDemo/Info.plist;
+				INFOPLIST_FILE = CodableWebSocketExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -395,10 +397,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"WebSocketDemo/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CodableWebSocketExample/Preview Content\"";
 				DEVELOPMENT_TEAM = 84Y3R5UC5Q;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = WebSocketDemo/Info.plist;
+				INFOPLIST_FILE = CodableWebSocketExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,7 +468,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		54CBB10125061F7600FD9ED7 /* Build configuration list for PBXNativeTarget "WebSocketDemo" */ = {
+		54CBB10125061F7600FD9ED7 /* Build configuration list for PBXNativeTarget "CodableWebSocketExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				54CBB10225061F7600FD9ED7 /* Debug */,
@@ -475,7 +477,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		54CBB10425061F7600FD9ED7 /* Build configuration list for PBXNativeTarget "WebSocketDemoTests" */ = {
+		54CBB10425061F7600FD9ED7 /* Build configuration list for PBXNativeTarget "CodableWebSocketExampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				54CBB10525061F7600FD9ED7 /* Debug */,
