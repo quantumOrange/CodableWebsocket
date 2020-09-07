@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5410D2B8250661A90097DE94 /* Thing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410D2B7250661A90097DE94 /* Thing.swift */; };
+		5410D2BA250670A70097DE94 /* Publisher+FilterOutErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410D2B9250670A70097DE94 /* Publisher+FilterOutErrors.swift */; };
 		54CBB0E625061F7400FD9ED7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CBB0E525061F7400FD9ED7 /* AppDelegate.swift */; };
 		54CBB0E825061F7400FD9ED7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CBB0E725061F7400FD9ED7 /* SceneDelegate.swift */; };
 		54CBB0EA25061F7400FD9ED7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CBB0E925061F7400FD9ED7 /* ContentView.swift */; };
@@ -14,6 +16,7 @@
 		54CBB0EF25061F7600FD9ED7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54CBB0EE25061F7600FD9ED7 /* Preview Assets.xcassets */; };
 		54CBB0F225061F7600FD9ED7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54CBB0F025061F7600FD9ED7 /* LaunchScreen.storyboard */; };
 		54CBB0FD25061F7600FD9ED7 /* WebSocketDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CBB0FC25061F7600FD9ED7 /* WebSocketDemoTests.swift */; };
+		54CBB10825061FF400FD9ED7 /* CodableWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CBB10725061FF400FD9ED7 /* CodableWebSocket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5410D2B7250661A90097DE94 /* Thing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thing.swift; sourceTree = "<group>"; };
+		5410D2B9250670A70097DE94 /* Publisher+FilterOutErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+FilterOutErrors.swift"; sourceTree = "<group>"; };
 		54CBB0E225061F7400FD9ED7 /* WebSocketDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebSocketDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54CBB0E525061F7400FD9ED7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54CBB0E725061F7400FD9ED7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +43,7 @@
 		54CBB0F825061F7600FD9ED7 /* WebSocketDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebSocketDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54CBB0FC25061F7600FD9ED7 /* WebSocketDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketDemoTests.swift; sourceTree = "<group>"; };
 		54CBB0FE25061F7600FD9ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54CBB10725061FF400FD9ED7 /* CodableWebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableWebSocket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,7 @@
 		54CBB0D925061F7400FD9ED7 = {
 			isa = PBXGroup;
 			children = (
+				54CBB10725061FF400FD9ED7 /* CodableWebSocket.swift */,
 				54CBB0E425061F7400FD9ED7 /* WebSocketDemo */,
 				54CBB0FB25061F7600FD9ED7 /* WebSocketDemoTests */,
 				54CBB0E325061F7400FD9ED7 /* Products */,
@@ -81,6 +88,8 @@
 			children = (
 				54CBB0E525061F7400FD9ED7 /* AppDelegate.swift */,
 				54CBB0E725061F7400FD9ED7 /* SceneDelegate.swift */,
+				5410D2B7250661A90097DE94 /* Thing.swift */,
+				5410D2B9250670A70097DE94 /* Publisher+FilterOutErrors.swift */,
 				54CBB0E925061F7400FD9ED7 /* ContentView.swift */,
 				54CBB0EB25061F7600FD9ED7 /* Assets.xcassets */,
 				54CBB0F025061F7600FD9ED7 /* LaunchScreen.storyboard */,
@@ -164,7 +173,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 54CBB0DD25061F7400FD9ED7 /* Build configuration list for PBXProject "WebSocketDemo" */;
+			buildConfigurationList = 54CBB0DD25061F7400FD9ED7 /* Build configuration list for PBXProject "CodableWebSocketExample" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -209,7 +218,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				54CBB0E625061F7400FD9ED7 /* AppDelegate.swift in Sources */,
+				54CBB10825061FF400FD9ED7 /* CodableWebSocket.swift in Sources */,
+				5410D2BA250670A70097DE94 /* Publisher+FilterOutErrors.swift in Sources */,
 				54CBB0E825061F7400FD9ED7 /* SceneDelegate.swift in Sources */,
+				5410D2B8250661A90097DE94 /* Thing.swift in Sources */,
 				54CBB0EA25061F7400FD9ED7 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,7 +457,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		54CBB0DD25061F7400FD9ED7 /* Build configuration list for PBXProject "WebSocketDemo" */ = {
+		54CBB0DD25061F7400FD9ED7 /* Build configuration list for PBXProject "CodableWebSocketExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				54CBB0FF25061F7600FD9ED7 /* Debug */,
