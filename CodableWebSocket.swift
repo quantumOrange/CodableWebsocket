@@ -46,7 +46,7 @@ final class CodableWebSocket<T:Codable>:Publisher,Subscriber {
             webSocketTask.send(message, completionHandler: {
                 error in
                 if let error = error {
-                    Swift.print("\(error)")
+                    Swift.print("ERROR on send \(error)")
                 }
             })
         }
@@ -109,3 +109,4 @@ final class WebsocketRecieveSubscription<SubscriberType: Subscriber, T: Codable>
            }
        }
 }
+

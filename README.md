@@ -9,7 +9,7 @@ A Combine Publisher and Subscriber that wraps a URLSessionWebSocketTask and make
 It's just one file, CodableWebSocket.swift, so you can just drop it into your project.
 
 ##  Usage
-Create a socket with a URL
+You can create a socket with a URL with any type that conforms to the Codable protocol:
 ```swift
 let socket = CodableWebSocket<MyCodableType>(url:URL(string:"ws://echo.websocket.org")!)
 ```
@@ -38,12 +38,11 @@ let cancelable  = socket
                             },
                             receiveValue:
                             { value in
+                                // do something with the value here
                                 print("Receved:\(value)")
                             }
                         )
 ```
-
-
 
 ## Example
 
