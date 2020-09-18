@@ -37,7 +37,6 @@ final class CodableWebSocket<T:Codable>:Publisher,Subscriber {
         subscriber.receive(subscription: subscription)
     }
     
-   
     // MARK: Subscriber
     
     func receive(subscription: Subscription) {
@@ -104,7 +103,6 @@ final class WebsocketRecieveSubscription<SubscriberType: Subscriber, T: Codable>
     }
 
     func cancel() {
-        Swift.print("Cancel!")
         subscriber = nil
     }
 
@@ -138,30 +136,6 @@ final class WebsocketRecieveSubscription<SubscriberType: Subscriber, T: Codable>
             
             _ = self?.subscriber?.receive(newResult)
             self?.receive()
-            /*
-               switch result
-               {
-               case .failure(let error):
-                let completion = Subscribers.Completion<Error>.failure(error)
-                self?.subscriber?.receive(completion:completion)
-                   
-               case .success(let message):
-                   switch message
-                   {
-                   case .string(_):
-                        Swift.print("Websocket received message:\(message)")
-                   case .data(let data):
-                        if  let thing = try? JSONDecoder().decode(T.self, from: data)
-                        {
-                            _ = self?.subscriber?.receive(thing)
-                        }
-                   @unknown default:
-                        break
-                   }
-
-                   self?.receive()
-               }
-             */
            }
   
        }
