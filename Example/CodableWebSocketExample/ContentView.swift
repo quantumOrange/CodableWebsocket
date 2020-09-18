@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Combine
+import CodableWebSocket
 
 class ViewModel:ObservableObject {
     var socket:CodableWebSocket<Thing>
