@@ -43,5 +43,5 @@ let cancelable  = socket
 
 ## Example
 
-A simple example that conncets ws://echo.websocket.org which echos back whatever is sent. Whenever we hit send we send a **Thing** to the server, and we display whatever is sent back (which is just the **Thing** we sent).
+The example app is a simple demo that conects to ws://echo.websocket.org. This websocket just echos back whatever is sent. Whenever the user  hits the send button we send a **Thing** to the server. Whatever is sent back (which will be just the **Thing** we sent) we display on the screen.
 
