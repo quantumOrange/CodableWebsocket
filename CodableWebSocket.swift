@@ -9,10 +9,16 @@
 import Foundation
 import Combine
 
+enum SocketData<T:Codable> {
+    case message(String)
+    case codable(T)
+    case uncodable(Data)
+}
+
 final class CodableWebSocket<T:Codable>:Publisher,Subscriber {
   
-    typealias Output = T
-    typealias Input =  T
+    typealias Output = Result<SocketData<T>,Error>
+    typealias Input =  SocketData<T>
     typealias Failure = Error
     let webSocketTask:URLSessionWebSocketTask
     var combineIdentifier: CombineIdentifier = CombineIdentifier()
@@ -38,19 +44,30 @@ final class CodableWebSocket<T:Codable>:Publisher,Subscriber {
         subscription.request(.unlimited)
     }
 
-    func receive(_ input: T) -> Subscribers.Demand {
+    func receive(_ input: SocketData<T>) -> Subscribers.Demand {
+        let message:URLSessionWebSocketTask.Message
         
-       
-        if let data = try? JSONEncoder().encode(input) {
-            let message = URLSessionWebSocketTask.Message.data(data)
-            webSocketTask.send(message, completionHandler: {
-                error in
-                if let error = error {
-                    Swift.print("ERROR on send \(error)")
-                }
-            })
+        switch input {
+        
+        case .message(let string):
+            message = URLSessionWebSocketTask.Message.string(string)
+        case .codable(let codable):
+            if let data = try? JSONEncoder().encode(codable) {
+                message = URLSessionWebSocketTask.Message.data(data)
+            }
+            else {
+                fatalError()
+            }
+        case .uncodable(let data):
+            message = URLSessionWebSocketTask.Message.data(data)
         }
-
+    
+        webSocketTask.send(message, completionHandler: {
+            error in
+            if let error = error {
+                Swift.print("ERROR on send \(error)")
+            }
+        })
         return .unlimited
     }
 
@@ -60,7 +77,18 @@ final class CodableWebSocket<T:Codable>:Publisher,Subscriber {
     
 }
 
-final class WebsocketRecieveSubscription<SubscriberType: Subscriber, T: Codable>: Subscription where SubscriberType.Input == T,SubscriberType.Failure == Error {
+extension CodableWebSocket {
+    func codable()-> AnyPublisher<T, CodableWebSocket<T>.Failure> {
+        return compactMap{ result -> T? in
+            guard case  Result<SocketData<T>,Error>.success(let socketdata) = result,
+                case SocketData.codable(let codable) = socketdata
+            else { return nil }
+            return codable
+        }.eraseToAnyPublisher()
+    }
+}
+
+final class WebsocketRecieveSubscription<SubscriberType: Subscriber, T: Codable>: Subscription where SubscriberType.Input == Result<SocketData<T>,Error>,SubscriberType.Failure == Error {
     private var subscriber: SubscriberType?
 
     let webSocketTask:URLSessionWebSocketTask
@@ -82,8 +110,35 @@ final class WebsocketRecieveSubscription<SubscriberType: Subscriber, T: Codable>
 
      func receive()
        {
-        webSocketTask.receive
-           {[weak self]result in
+        webSocketTask
+            .receive
+           {[weak self] result in
+            let newResult:Result<SocketData<T>,Error> =  result.map { message in
+                
+                                                                        switch message
+                                                                        {
+                                                                        case .string(let str):
+                                                                            return SocketData<T>.message(str)
+                                                                        case .data(let data):
+                                                                            if  let thing = try? JSONDecoder().decode(T.self, from: data)
+                                                                            {
+                                                                                return .codable(thing)
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                return .uncodable(data)
+                                                                            }
+                                                                            
+                                                                        @unknown default:
+                                                                            fatalError()
+                                                                        }
+                                                                        
+                                                                    }
+                                                                    
+            
+            _ = self?.subscriber?.receive(newResult)
+            self?.receive()
+            /*
                switch result
                {
                case .failure(let error):
@@ -106,7 +161,9 @@ final class WebsocketRecieveSubscription<SubscriberType: Subscriber, T: Codable>
 
                    self?.receive()
                }
+             */
            }
+  
        }
 }
 

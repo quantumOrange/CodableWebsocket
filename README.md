@@ -19,13 +19,14 @@ You can send values to the websocket like this:
  let value = MyCodableType()
     
     socket
-        .receive(value)
+        .receive(.codable(value))
 ```
 
 And receive values fromt the server like this:
 
 ``` swift
 let cancelable  = socket
+                    .codable
                     .sink(receiveCompletion:
                             { completion in
                                 switch completion

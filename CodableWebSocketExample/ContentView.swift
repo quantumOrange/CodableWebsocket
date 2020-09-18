@@ -19,10 +19,11 @@ class ViewModel:ObservableObject {
         socket = CodableWebSocket<Thing>(url:URL(string:"ws://echo.websocket.org")!)
         
         cancelable  =     socket
+                            .codable()
                             .receive(on:DispatchQueue.main)
                             .filterOutErrors()
                             .assign(to: \ViewModel.thing, on: self)
-        
+                                
     }
 }
 
@@ -40,7 +41,7 @@ struct ContentView: View
                 _ = self
                     .viewModel
                     .socket
-                    .receive(self.viewModel.thing.next())
+                    .receive(.codable(self.viewModel.thing.next()))
             }
         
         }
