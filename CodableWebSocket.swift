@@ -33,7 +33,7 @@ final class CodableWebSocket<T:Codable>:Publisher,Subscriber {
     // MARK: Publisher
     
     func receive<S>(subscriber: S) where S : Subscriber, CodableWebSocket.Failure == S.Failure, CodableWebSocket.Output == S.Input {
-        let subscription = WebsocketRecieveSubscription(subscriber: subscriber, socket:webSocketTask)
+        let subscription = CodableWebsocketSubscription(subscriber: subscriber, socket:webSocketTask)
         subscriber.receive(subscription: subscription)
     }
     
@@ -64,6 +64,9 @@ final class CodableWebSocket<T:Codable>:Publisher,Subscriber {
         webSocketTask.send(message, completionHandler: {
             error in
             if let error = error {
+                if  self.webSocketTask.closeCode != .invalid {
+                    //closed!
+                }
                 Swift.print("ERROR on send \(error)")
             }
         })
@@ -71,7 +74,7 @@ final class CodableWebSocket<T:Codable>:Publisher,Subscriber {
     }
 
     func receive(completion: Subscribers.Completion<Error>) {
-            Swift.print("Completion")
+        Swift.print("Completion")
     }
     
 }
@@ -85,59 +88,5 @@ extension CodableWebSocket {
             return codable
         }.eraseToAnyPublisher()
     }
-}
-
-final class WebsocketRecieveSubscription<SubscriberType: Subscriber, T: Codable>: Subscription where SubscriberType.Input == Result<SocketData<T>,Error>,SubscriberType.Failure == Error {
-    private var subscriber: SubscriberType?
-
-    let webSocketTask:URLSessionWebSocketTask
-
-    init(subscriber: SubscriberType, socket:URLSessionWebSocketTask) {
-        self.subscriber = subscriber
-        webSocketTask = socket
-        receive()
-    }
-
-    func request(_ demand: Subscribers.Demand) {
-        // Nothing to do here
-    }
-
-    func cancel() {
-        subscriber = nil
-    }
-
-     func receive()
-       {
-        webSocketTask
-            .receive
-           {[weak self] result in
-            let newResult:Result<SocketData<T>,Error> =  result.map { message in
-                
-                                                                        switch message
-                                                                        {
-                                                                        case .string(let str):
-                                                                            return SocketData<T>.message(str)
-                                                                        case .data(let data):
-                                                                            if  let thing = try? JSONDecoder().decode(T.self, from: data)
-                                                                            {
-                                                                                return .codable(thing)
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                return .uncodable(data)
-                                                                            }
-                                                                            
-                                                                        @unknown default:
-                                                                            fatalError()
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-            
-            _ = self?.subscriber?.receive(newResult)
-            self?.receive()
-           }
-  
-       }
 }
 

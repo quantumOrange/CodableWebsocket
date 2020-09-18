@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5410D2B8250661A90097DE94 /* Thing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410D2B7250661A90097DE94 /* Thing.swift */; };
 		5410D2BA250670A70097DE94 /* Publisher+FilterOutErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410D2B9250670A70097DE94 /* Publisher+FilterOutErrors.swift */; };
+		54115A082514D2F6002DF01D /* CodableWebsocketSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54115A072514D2F6002DF01D /* CodableWebsocketSubscription.swift */; };
 		54CBB0E625061F7400FD9ED7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CBB0E525061F7400FD9ED7 /* AppDelegate.swift */; };
 		54CBB0E825061F7400FD9ED7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CBB0E725061F7400FD9ED7 /* SceneDelegate.swift */; };
 		54CBB0EA25061F7400FD9ED7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CBB0E925061F7400FD9ED7 /* ContentView.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		5410D2B7250661A90097DE94 /* Thing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thing.swift; sourceTree = "<group>"; };
 		5410D2B9250670A70097DE94 /* Publisher+FilterOutErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+FilterOutErrors.swift"; sourceTree = "<group>"; };
+		54115A072514D2F6002DF01D /* CodableWebsocketSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableWebsocketSubscription.swift; sourceTree = "<group>"; };
 		546FAB64250687D700D2A821 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		54CBB0E225061F7400FD9ED7 /* CodableWebSocketExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodableWebSocketExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54CBB0E525061F7400FD9ED7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				54CBB10725061FF400FD9ED7 /* CodableWebSocket.swift */,
+				54115A072514D2F6002DF01D /* CodableWebsocketSubscription.swift */,
 				546FAB64250687D700D2A821 /* README.md */,
 				54CBB0E425061F7400FD9ED7 /* CodableWebSocketExample */,
 				54CBB0FB25061F7600FD9ED7 /* CodableWebSocketExampleTests */,
@@ -225,6 +228,7 @@
 				54CBB0E825061F7400FD9ED7 /* SceneDelegate.swift in Sources */,
 				5410D2B8250661A90097DE94 /* Thing.swift in Sources */,
 				54CBB0EA25061F7400FD9ED7 /* ContentView.swift in Sources */,
+				54115A082514D2F6002DF01D /* CodableWebsocketSubscription.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
