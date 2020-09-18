@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CodableWebSocket",
+        "repositoryURL": "https://github.com/quantumOrange/CodableWebsocket",
+        "state": {
+          "branch": null,
+          "revision": "8c5fe7b0294c952d65cc53e22114d3c8997a200d",
+          "version": "0.1.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
