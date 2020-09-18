@@ -4,10 +4,6 @@ A Combine Publisher and Subscriber that wraps a URLSessionWebSocketTask and make
 
 **Combine, SwiftUI, Websocket**
 
-## Installation
-
-It's just one file, CodableWebSocket.swift, so you can just drop it into your project.
-
 ##  Usage
 You can create a socket with a URL with any type that conforms to the Codable protocol:
 ```swift
