@@ -9,21 +9,21 @@
 import Foundation
 import Combine
 
-enum SocketData<T:Codable> {
+public enum SocketData<T:Codable> {
     case message(String)
     case codable(T)
     case uncodable(Data)
 }
 
-final class CodableWebSocket<T:Codable>:Publisher,Subscriber {
+public final class CodableWebSocket<T:Codable>:Publisher,Subscriber {
   
-    typealias Output = Result<SocketData<T>,Error>
-    typealias Input =  SocketData<T>
-    typealias Failure = Error
+    public typealias Output = Result<SocketData<T>,Error>
+    public typealias Input =  SocketData<T>
+    public typealias Failure = Error
     let webSocketTask:URLSessionWebSocketTask
-    var combineIdentifier: CombineIdentifier = CombineIdentifier()
+    public var combineIdentifier: CombineIdentifier = CombineIdentifier()
     
-    init(url:URL)
+    public init(url:URL)
     {
         let urlSession = URLSession(configuration: .default)
         webSocketTask = urlSession.webSocketTask(with:url)
@@ -32,18 +32,18 @@ final class CodableWebSocket<T:Codable>:Publisher,Subscriber {
     
     // MARK: Publisher
     
-    func receive<S>(subscriber: S) where S : Subscriber, CodableWebSocket.Failure == S.Failure, CodableWebSocket.Output == S.Input {
+    public func receive<S>(subscriber: S) where S : Subscriber, CodableWebSocket.Failure == S.Failure, CodableWebSocket.Output == S.Input {
         let subscription = CodableWebsocketSubscription(subscriber: subscriber, socket:webSocketTask)
         subscriber.receive(subscription: subscription)
     }
     
     // MARK: Subscriber
     
-    func receive(subscription: Subscription) {
+    public func receive(subscription: Subscription) {
         subscription.request(.unlimited)
     }
 
-    func receive(_ input: SocketData<T>) -> Subscribers.Demand {
+    public func receive(_ input: SocketData<T>) -> Subscribers.Demand {
         let message:URLSessionWebSocketTask.Message
         
         switch input {
@@ -73,14 +73,14 @@ final class CodableWebSocket<T:Codable>:Publisher,Subscriber {
         return .unlimited
     }
 
-    func receive(completion: Subscribers.Completion<Error>) {
+    public func receive(completion: Subscribers.Completion<Error>) {
         Swift.print("Completion")
     }
     
 }
 
 extension CodableWebSocket {
-    func codable()-> AnyPublisher<T, CodableWebSocket<T>.Failure> {
+    public func codable()-> AnyPublisher<T, CodableWebSocket<T>.Failure> {
         return compactMap{ result -> T? in
             guard case  Result<SocketData<T>,Error>.success(let socketdata) = result,
                 case SocketData.codable(let codable) = socketdata

@@ -28,7 +28,7 @@ final class CodableWebsocketSubscription<SubscriberType: Subscriber, T: Codable>
         subscriber = nil
     }
 
-     func receive()
+    func receive()
        {
         webSocketTask
             .receive

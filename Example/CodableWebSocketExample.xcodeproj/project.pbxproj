@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5410D2B8250661A90097DE94 /* Thing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410D2B7250661A90097DE94 /* Thing.swift */; };
 		5410D2BA250670A70097DE94 /* Publisher+FilterOutErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410D2B9250670A70097DE94 /* Publisher+FilterOutErrors.swift */; };
-		54115A0B2514DE13002DF01D /* CodableWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54115A092514DE13002DF01D /* CodableWebSocket.swift */; };
-		54115A0C2514DE13002DF01D /* CodableWebsocketSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54115A0A2514DE13002DF01D /* CodableWebsocketSubscription.swift */; };
+		54115A132514E14B002DF01D /* CodableWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 54115A122514E14B002DF01D /* CodableWebSocket */; };
 		54CBB0E625061F7400FD9ED7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CBB0E525061F7400FD9ED7 /* AppDelegate.swift */; };
 		54CBB0E825061F7400FD9ED7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CBB0E725061F7400FD9ED7 /* SceneDelegate.swift */; };
 		54CBB0EA25061F7400FD9ED7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CBB0E925061F7400FD9ED7 /* ContentView.swift */; };
@@ -33,8 +32,6 @@
 /* Begin PBXFileReference section */
 		5410D2B7250661A90097DE94 /* Thing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thing.swift; sourceTree = "<group>"; };
 		5410D2B9250670A70097DE94 /* Publisher+FilterOutErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+FilterOutErrors.swift"; sourceTree = "<group>"; };
-		54115A092514DE13002DF01D /* CodableWebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CodableWebSocket.swift; path = CodableWebSocketExample.xcodeproj/../../Sources/CodableWebSocket/CodableWebSocket.swift; sourceTree = SOURCE_ROOT; };
-		54115A0A2514DE13002DF01D /* CodableWebsocketSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CodableWebsocketSubscription.swift; path = CodableWebSocketExample.xcodeproj/../../Sources/CodableWebSocket/CodableWebsocketSubscription.swift; sourceTree = SOURCE_ROOT; };
 		54CBB0E225061F7400FD9ED7 /* CodableWebSocketExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodableWebSocketExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54CBB0E525061F7400FD9ED7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54CBB0E725061F7400FD9ED7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54115A132514E14B002DF01D /* CodableWebSocket in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,8 +85,6 @@
 		54CBB0E425061F7400FD9ED7 /* CodableWebSocketExample */ = {
 			isa = PBXGroup;
 			children = (
-				54115A092514DE13002DF01D /* CodableWebSocket.swift */,
-				54115A0A2514DE13002DF01D /* CodableWebsocketSubscription.swift */,
 				54CBB0E525061F7400FD9ED7 /* AppDelegate.swift */,
 				54CBB0E725061F7400FD9ED7 /* SceneDelegate.swift */,
 				5410D2B7250661A90097DE94 /* Thing.swift */,
@@ -135,6 +131,9 @@
 			dependencies = (
 			);
 			name = CodableWebSocketExample;
+			packageProductDependencies = (
+				54115A122514E14B002DF01D /* CodableWebSocket */,
+			);
 			productName = WebSocketDemo;
 			productReference = 54CBB0E225061F7400FD9ED7 /* CodableWebSocketExample.app */;
 			productType = "com.apple.product-type.application";
@@ -185,6 +184,9 @@
 				Base,
 			);
 			mainGroup = 54CBB0D925061F7400FD9ED7;
+			packageReferences = (
+				54115A112514E14B002DF01D /* XCRemoteSwiftPackageReference "CodableWebsocket" */,
+			);
 			productRefGroup = 54CBB0E325061F7400FD9ED7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -222,11 +224,9 @@
 			files = (
 				54CBB0E625061F7400FD9ED7 /* AppDelegate.swift in Sources */,
 				5410D2BA250670A70097DE94 /* Publisher+FilterOutErrors.swift in Sources */,
-				54115A0B2514DE13002DF01D /* CodableWebSocket.swift in Sources */,
 				54CBB0E825061F7400FD9ED7 /* SceneDelegate.swift in Sources */,
 				5410D2B8250661A90097DE94 /* Thing.swift in Sources */,
 				54CBB0EA25061F7400FD9ED7 /* ContentView.swift in Sources */,
-				54115A0C2514DE13002DF01D /* CodableWebsocketSubscription.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +489,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		54115A112514E14B002DF01D /* XCRemoteSwiftPackageReference "CodableWebsocket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/quantumOrange/CodableWebsocket";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		54115A122514E14B002DF01D /* CodableWebSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54115A112514E14B002DF01D /* XCRemoteSwiftPackageReference "CodableWebsocket" */;
+			productName = CodableWebSocket;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 54CBB0DA25061F7400FD9ED7 /* Project object */;
 }

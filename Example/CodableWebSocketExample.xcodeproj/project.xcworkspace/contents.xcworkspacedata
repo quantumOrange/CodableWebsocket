@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../../Sources/CodableWebSocket/CodableWebSocket.swift">
-   </FileRef>
-   <FileRef
-      location = "group:../../Sources/CodableWebSocket/CodableWebsocketSubscription.swift">
-   </FileRef>
-   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>
